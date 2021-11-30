@@ -1,0 +1,42 @@
+{
+		"AWSEBDockerrunnVersion": 2,
+		"cotainerDefinitions": [
+		{
+			"name": "client",
+			"image": "alisha0788/multi-client",
+			"hostname": "client",
+			"essential": false,
+			"memory": 128
+		},
+		{
+			"name": "server",
+			"image": "alisha0788/multi-server",
+			"hostname": "api",
+			"essential": false,
+			"memory": 128
+		},
+		{
+			"name": "worked",
+			"image": "alisha0788/multi-worker",
+			"hostname": "worker",
+			"essential": false,
+			"memory": 128
+		},
+		{
+			"name": "nginx",
+			"image": "alisha0788/multi-nginx",
+			"hostname": "nginx",
+			"essential": true,
+			"postMappings": [
+				{
+					"hostPort": 80,
+					"containerPort": 80
+				
+				}
+			],
+			"links": ["client","server"],
+			"memory": 128
+		}
+
+	]
+}
