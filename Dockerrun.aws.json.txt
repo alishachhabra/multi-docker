@@ -6,7 +6,7 @@
 			"image": "alisha0788/multi-client",
 			"hostname": "client",
 			"essential": false,
-			"memory": 128
+			"memory": 129
 		},
 		{
 			"name": "server",
